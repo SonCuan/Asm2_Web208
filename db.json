@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "Product 1 description",
+      "price": 100,
+      "image": "https://via.placeholder.com/150",
+      "quanlity": 10
+    },
+    {
+      "name": "Product 2",
+      "price": 11.33,
+      "image": "https://picsum.photos/200/300",
+      "description": "mo ta ",
+      "quanlity": "3",
+      "id": 2
+    }
+  ],
+  "users": [
+  ]
+}

@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Quanlity</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of product">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.image}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.quanlity}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteProduct(item.id!)">Xoa</button>
+                <button class="btn btn-warning" routerLink= "/products/{{item.id}}/update">Sua</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

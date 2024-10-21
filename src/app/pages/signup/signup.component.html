@@ -1,0 +1,31 @@
+<h2>Dang ky</h2>
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <label>username</label>
+    <input type="text" formControlName="username" class="form-control" required>
+    <div *ngIf="productForm.get('username')?.invalid && productForm.get('username')?.touched" >
+        <div *ngIf="productForm.get('username')?.errors?.['required']" class="text-danger">
+            Ten bat buoc phai co 
+        </div>
+    </div>
+    <label>Email</label>
+    <input type="text" formControlName="email" class="form-control" required>
+    <div *ngIf="productForm.get('email')?.invalid && productForm.get('email')?.touched" >
+        <div *ngIf="productForm.get('email')?.errors?.['required']" class="text-danger">
+            Ten bat buoc phai co 
+        </div>
+        <div *ngIf="productForm.get('email')?.errors?.['minlength']" class="text-danger">
+            Ten phai co it nhat 6 ky tu
+        </div>
+    </div>
+    <label>Password</label>
+    <input type="password" formControlName="password" class="form-control">
+    <div *ngIf="productForm.get('password')?.invalid && productForm.get('password')?.touched" >
+        <div *ngIf="productForm.get('password')?.errors?.['required']" class="text-danger">
+            Ten bat buoc phai co 
+        </div>
+        <div *ngIf="productForm.get('password')?.errors?.['minlength']" class="text-danger">
+            Mat khau phai co it nhat 6 ky tu
+        </div>
+    </div>
+    <button class="btn btn-primary w-100" type="submit">Them</button>
+</form>

@@ -1,0 +1,30 @@
+<h2>Them san pham</h2>
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <label>Name</label>
+    <input type="text" formControlName="name" class="form-control" required>
+    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" >
+        <div *ngIf="productForm.get('name')?.errors?.['required']" class="text-danger">
+            Ten bat buoc phai co 
+        </div>
+        <div *ngIf="productForm.get('name')?.errors?.['minlength']" class="text-danger">
+            Ten phai co it nhat 6 ky tu
+        </div>
+    </div>
+    <label>image</label>
+    <input type="text" formControlName="image" class="form-control">
+    <label>Price</label>
+    <input type="number" formControlName="price" class="form-control">
+    <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" >
+        <div *ngIf="productForm.get('price')?.errors?.['required']" class="text-danger">
+            Gia bat buoc phai co 
+        </div>
+        <div *ngIf="productForm.get('price')?.errors?.['min']" class="text-danger">
+          Gia phai lon hon 0 
+        </div>
+    </div>
+    <label>Description</label>
+    <input type="text" formControlName="description" class="form-control">
+    <label>quanlity</label>
+    <input type="text" formControlName="quanlity" class="form-control">
+    <button class="btn btn-primary w-100" type="submit">Them</button>
+</form>
